@@ -1,1 +1,77 @@
-<p>consulta-produtos works!</p>
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    <h4 class="card-title">Consulta de Produto</h4>
+                    <p class="card-subtitle">Utilize o formulário
+                        para pesquisar produtos.</p>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nomeProduto" class="form-label">Nome do Produto</label>
+                            <input type="text" class="form-control" id="nomeProduto"
+                                placeholder="Digite o nome do produto">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Tabela de Produtos -->
+            <div class="card mt-4 shadow-lg">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col" class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Produto 1</td>
+                                <td>R$ 100,00</td>
+                                <td>50</td>
+                                <td>Eletrônicos</td>
+                                <td class="text-center">
+                                    <button class="btn btn-warning btn-sm me-1">
+                                        Atualizar</button>
+                                    <button class="btn btn-danger btn-sm">
+                                        Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Produto 2</td>
+                                <td>R$ 200,00</td>
+                                <td>30</td>
+                                <td>Roupas</td>
+                                <td class="text-center">
+                                    <button class="btn btn-warning btn-sm me-1">
+                                        Atualizar</button>
+                                    <button class="btn btn-danger btn-sm">
+                                        Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Produto 3</td>
+                                <td>R$ 50,00</td>
+                                <td>100</td>
+                                <td>Alimentos</td>
+                                <td class="text-center">
+                                    <button class="btn btn-warning btn-sm me-1">
+                                        Atualizar</button>
+                                    <button class="btn btn-danger btn-sm">
+                                        Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
