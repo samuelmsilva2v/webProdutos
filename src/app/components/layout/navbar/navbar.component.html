@@ -1,9 +1,25 @@
-<h3>Sistema de controle do produtos</h3>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand ms-2" href="#">
+        Sistema de controle de produtos
+    </a>
+    <button class="navbar-toggler" type="button" data-bs- toggle="collapse" data-bs-target="#navbarNav" aria-
+        controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Gerenciar produtos
+                </a>
 
-<ul>
-    <li><a routerLink="/pages/cadastro-produtos">Cadastrar produtos</a></li>
-    <li><a routerLink="/pages/consulta-produtos">Consultar produtos</a></li>
-    <li><a routerLink="/pages/edicao-produtos">Atualizar produtos</a></li>
-</ul>
-
-<hr/>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" routerLink="/pages/cadastro-produtos">Cadastrar produtos</a></li>
+                    <li><a class="dropdown-item" routerLink="/pages/consulta-produtos">Consultar produtos</a></li>
+                    <li><a class="dropdown-item" routerLink="/pages/edicao-produtos">Atualizar produtos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
