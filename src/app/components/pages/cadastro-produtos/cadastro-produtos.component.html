@@ -4,45 +4,42 @@
             <div class="card shadow-lg">
                 <div class="card-header">
                     <h4 class="card-title">Cadastro de Produto</h4>
-                    <p class="card-subtitle">Preencha o formulário
-                        para incluir um produto.</p>
+                    <p class="card-subtitle">Preencha o formulário para incluir um produto.</p>
                 </div>
+
                 <div class="card-body">
-                    <form>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
                         <div class="mb-3">
-                            <label for="nome" class="form-label">
-                                Nome do Produto</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto"
-                                required>
+                            <label for="nome" class="form-label">Nome do Produto</label>
+                            <input type="text" formControlName="nome" class="form-control" id="nome" placeholder="Digite o nome do produto" required>
                         </div>
+
                         <div class="mb-3">
                             <label for="preco" class="form-label">Preço</label>
-                            <input type="number" class="form-control" id="preco" placeholder="Digite o preço do produto"
-                                required>
+                            <input type="number" formControlName="preco" class="form-control" id="preco" placeholder="Digite o preço do produto" required>
                         </div>
+
                         <div class="mb-3">
-                            <label for="quantidade" class="form-label">
-                                Quantidade</label>
-                            <input type="number" class="form-control" id="quantidade"
-                                placeholder="Digite a quantidade do produto" required>
+                            <label for="quantidade" class="form-label">Quantidade</label>
+                            <input type="number" formControlName="quantidade" class="form-control" id="quantidade" placeholder="Digite a quantidade do produto" required>
                         </div>
+
                         <div class="mb-3">
-                            <label for="categoria" class="form-label">
-                                Categoria</label>
-                            <select class="form-select" id="categoria" required>
-                                <option value="" disabled selected>
-                                    Selecione a categoria</option>
-                                
-                                <option *ngFor="let c of categorias"> {{ c.nome }}</option>
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select class="form-select" formControlName="categoriaId" id="categoria" required>
+                                <option value="" disabled selected>Selecione a categoria</option>
+                                <option *ngFor="let c of categorias" value="{{ c.id }}"> {{ c.nome }}</option>
                             </select>
                         </div>
+
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary w-100">
-                                Cadastrar Produto
-                            </button>
+                            <button type="submit" class="btn btn-primary w-100">Cadastrar Produto</button>
                         </div>
+
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
