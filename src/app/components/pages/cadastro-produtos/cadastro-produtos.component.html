@@ -8,6 +8,11 @@
                 </div>
 
                 <div class="card-body">
+
+                    <div *ngIf="mensagem" class="alert alert-success">
+                        <strong>Sucesso!</strong> {{ mensagem }}
+                    </div>
+
                     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
                         <div class="mb-3">
