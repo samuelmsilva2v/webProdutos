@@ -17,6 +17,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class CadastroProdutosComponent {
 
   categorias: any[] = [];
+  erros: any = null;
+  mensagem: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -42,10 +44,15 @@ export class CadastroProdutosComponent {
     this.http.post('http://localhost:8080/api/produtos/cadastrar', this.form.value, {responseType: 'text'})
       .subscribe({
         next: (data) => {
-          console.log(data);
+          this.erros = null;
+
+          this.mensagem = data;
+
+          this.form.reset();
         },
         error: (e) => {
-          console.error(e.error);
+          this.erros = JSON.parse(e.error);
+          this.mensagem = '';
         }
       });
   }
