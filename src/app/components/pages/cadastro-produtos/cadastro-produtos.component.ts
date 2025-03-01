@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { endpoints } from '../../../configurations/environment';
 
 @Component({
   selector: 'app-cadastro-produtos',
@@ -16,15 +17,19 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 })
 export class CadastroProdutosComponent {
 
+  // Atributos
   categorias: any[] = [];
   erros: any = null;
   mensagem: string = '';
 
+  // Construtores
   constructor(private http: HttpClient) { }
 
+  // Função executada ao abrir a página
   ngOnInit() { 
     
-    this.http.get('http://localhost:8080/api/categorias/consultar')
+    // Fazendo uma requisição GET para a API para obter as categorias
+    this.http.get(endpoints.consultar_categorias)
       .subscribe({
         next: (data) => {
           this.categorias = data as any[];
@@ -39,11 +44,14 @@ export class CadastroProdutosComponent {
     categoriaId: new FormControl('', Validators.required)
   });
 
+  // Função executada ao enviar o formulário
   onSubmit() {
 
-    this.http.post('http://localhost:8080/api/produtos/cadastrar', this.form.value, {responseType: 'text'})
+    // Fazendo uma requisição POST para a API para cadastrar
+    this.http.post(endpoints.cadastrar_produto, this.form.value, {responseType: 'text'})
       .subscribe({
         next: (data) => {
+
           this.erros = null;
 
           this.mensagem = data;

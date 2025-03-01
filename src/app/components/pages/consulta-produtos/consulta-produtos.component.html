@@ -24,6 +24,10 @@
             <div *ngIf="produtos.length > 0" class="card mt-4 shadow-lg">
                 <div class="card-body">
 
+                    <div *ngIf="mensagem" class="alert alert-success mb-2">
+                        <strong>Sucesso!</strong> {{ mensagem }}
+                    </div>
+
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -44,7 +48,7 @@
                                 <td>{{ p.categoria.nome | uppercase }}</td>
                                 <td class="text-center">
                                   <button class="btn btn-warning btn-sm me-1">Atualizar</button>
-                                  <button class="btn btn-danger btn-sm">Excluir</button>
+                                  <button (click)="onDelete(p.id)" class="btn btn-danger btn-sm">Excluir</button>
                                 </td>
                               </tr>
                         </tbody>
