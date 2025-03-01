@@ -12,7 +12,8 @@
                     <form [formGroup]="form" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
                             <label for="nomeProduto" class="form-label">Nome do Produto</label>
-                            <input type="text" formControlName="nome" class="form-control" id="nomeProduto" placeholder="Digite o nome do produto">
+                            <input type="text" formControlName="nome" class="form-control" id="nomeProduto"
+                                placeholder="Digite o nome do produto">
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Pesquisar</button>
                     </form>
@@ -47,10 +48,10 @@
                                 <td>{{ p.preco * p.quantidade | currency: 'BRL' }}</td>
                                 <td>{{ p.categoria.nome | uppercase }}</td>
                                 <td class="text-center">
-                                  <button class="btn btn-warning btn-sm me-1">Atualizar</button>
-                                  <button (click)="onDelete(p.id)" class="btn btn-danger btn-sm">Excluir</button>
+                                    <button class="btn btn-warning btn-sm me-1">Atualizar</button>
+                                    <button (click)="onDelete(p.id)" class="btn btn-danger btn-sm">Excluir</button>
                                 </td>
-                              </tr>
+                            </tr>
                         </tbody>
                     </table>
 
