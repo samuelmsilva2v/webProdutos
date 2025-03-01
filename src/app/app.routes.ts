@@ -18,7 +18,7 @@ export const routes: Routes = [
         component: ConsultaProdutosComponent
     },
     {
-        path: 'pages/edicao-produtos',
+        path: 'pages/edicao-produtos/:id',
         component: EdicaoProdutosComponent
     },
     {
