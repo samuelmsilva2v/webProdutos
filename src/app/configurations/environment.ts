@@ -5,5 +5,6 @@ export const endpoints = {
     atualizar_produto : `${apiUrl}/api/produtos/atualizar`,
     excluir_produto : `${apiUrl}/api/produtos/excluir`,
     consultar_produtos : `${apiUrl}/api/produtos/consultar`,
-    consultar_categorias : `${apiUrl}/api/categorias/consultar`
+    consultar_categorias : `${apiUrl}/api/categorias/consultar`,
+    dashboard_categorias : `${apiUrl}/api/dashboard/produtos-por-categoria`
 };

@@ -1,1 +1,37 @@
-<p>dashboard works!</p>
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    <h4 class="card-title">Dashboard principal</h4>
+                    <p class="card-subtitle">Seja bem vindo ao sistema de controle de produtos.</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Categoria</th>
+                                        <th>Somatório de produtos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of dados">
+                                        <td> {{ item.nomeCategoria | uppercase }}</td>
+                                        <td> {{ item.qtdProdutos }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-7">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
